@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Semantic HTML Matters | Accessibility Guide</title>
+  <meta name="description" content="A practical guide to semantic HTML, accessibility, document structure, headings, images, tables, keyboard navigation, and screen-reader-friendly markup.">
+  <style>
+    body { max-width: 900px; margin: 0 auto; padding: 1rem; font-family: system-ui, sans-serif; line-height: 1.6; }
+    header, footer, aside, section, article { margin-block: 1.5rem; }
+    nav ul { display: flex; flex-wrap: wrap; gap: 1rem; padding: 0; list-style: none; }
+    img { max-width: 100%; height: auto; }
+    figure { margin-inline: 0; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid #777; padding: .5rem; text-align: left; }
+    :focus-visible { outline: 3px solid #005fcc; outline-offset: 3px; }
+    .skip-link { position: absolute; left: -9999px; top: 0; }
+    .skip-link:focus { left: 1rem; top: 1rem; background: #fff; padding: .5rem; }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header>
+    <h1>Why Semantic HTML Matters</h1>
+    <p>A practical guide to structure, accessibility, and maintainable web pages.</p>
+    <nav aria-label="Primary navigation">
+      <ul>
+        <li><a href="#meaning">What semantic HTML means</a></li>
+        <li><a href="#structure">Page structure</a></li>
+        <li><a href="#images">Images</a></li>
+        <li><a href="#table">Data table</a></li>
+        <li><a href="#audit">Accessibility audit</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main-content">
+    <article>
+      <section id="meaning">
+        <h2>What semantic HTML means</h2>
+        <p>Semantic HTML uses elements according to the meaning of their content rather than choosing elements only for visual appearance. A <code>nav</code> communicates navigation, an <code>article</code> identifies self-contained content, and a <code>button</code> communicates an action.</p>
+        <figure><img src="images/code.svg" alt="Diagram showing main and article elements in an HTML document"><figcaption>Meaningful structure makes the purpose of content clearer to people and assistive technologies.</figcaption></figure>
+        <h3>Meaning over appearance</h3>
+        <p>Visual design can change without changing meaning. This separation helps browsers, search engines, assistive technologies, and developers understand each part of the document.</p>
+      </section>
+      <section id="structure">
+        <h2>Building a clear page structure</h2>
+        <p>A well-structured article can use header for introductory material, nav for navigation, main for primary content, article for a self-contained publication, sections for major topics, and footer for closing information.</p>
+        <figure><img src="images/structure.svg" alt="Diagram of a semantic page layout with header, navigation, main article, section, and aside"><figcaption>Semantic elements describe the role of content instead of its visual position.</figcaption></figure>
+        <h3>Headings create an outline</h3>
+        <p>This page has one <code>h1</code>. Major topics use <code>h2</code>, and supporting topics use <code>h3</code>. No heading level is skipped.</p>
+        <figure><img src="images/headings.svg" alt="Diagram showing an h1 followed by h2 and h3 headings without skipped levels"><figcaption>Good heading hierarchy helps readers scan long articles.</figcaption></figure>
+      </section>
+      <section id="images">
+        <h2>Using images accessibly</h2>
+        <p>Informative images need alternative text that communicates their purpose. Decorative images should have empty alternative text so a screen reader can ignore them.</p>
+        <figure><img src="images/keyboard.svg" alt="Illustration of Tab and Enter keys representing keyboard navigation"><figcaption>Keyboard users need a logical focus order and a visible focus indicator.</figcaption></figure>
+        <figure><img src="images/decorative.svg" alt=""><figcaption>This abstract decoration is intentionally ignored by screen readers.</figcaption></figure>
+      </section>
+      <section id="table">
+        <h2>Semantic elements at a glance</h2>
+        <table>
+          <caption>Common semantic HTML elements and their primary purpose</caption>
+          <thead><tr><th scope="col">Element</th><th scope="col">Purpose</th><th scope="col">Typical content</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">header</th><td>Introductory content</td><td>Title, branding, navigation</td></tr>
+            <tr><th scope="row">nav</th><td>Navigation landmark</td><td>Primary or section links</td></tr>
+            <tr><th scope="row">main</th><td>Primary page content</td><td>Main article or application content</td></tr>
+            <tr><th scope="row">article</th><td>Self-contained content</td><td>Post, story, guide, or news item</td></tr>
+            <tr><th scope="row">section</th><td>Thematic grouping</td><td>A major topic within the article</td></tr>
+            <tr><th scope="row">footer</th><td>Closing information</td><td>Author, date, related links</td></tr>
+          </tbody>
+        </table>
+      </section>
+      <section id="audit">
+        <h2>Accessibility audit checklist</h2>
+        <p>The implementation includes a first-focusable skip link, visible keyboard focus, semantic landmarks, a logical heading hierarchy, meaningful alternative text, a decorative image with empty alt text, and accessible table headers.</p>
+        <h3>Publication details</h3>
+        <p>Published <time datetime="2026-09-11">September 11, 2026</time>.</p>
+      </section>
+    </article>
+    <aside>
+      <h2>Quick takeaway</h2>
+      <p>Use the element that best describes the content. Semantic HTML is not about adding more tags; it is about giving existing content useful meaning.</p>
+    </aside>
+  </main>
+  <footer><p>Semantic HTML accessibility guide.</p></footer>
+  <script>console.log('[plain]', new Date().toISOString(), 'plain script executed');</script>
+  <script async src="async.js"></script>
+  <script defer src="defer.js"></script>
+</body>
+</html>

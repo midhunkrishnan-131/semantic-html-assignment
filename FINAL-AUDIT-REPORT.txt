@@ -1,0 +1,51 @@
+FINAL AUDIT / SUBMISSION NOTES
+
+The reviewer screenshot identified missing requirements in the previous submission. This revised package addresses them directly.
+
+STRUCTURE
+PASS — DOCTYPE, charset, viewport, descriptive title, and meta description.
+PASS — header, nav, main, article, section, aside, figure, figcaption, time, footer.
+PASS — No div elements are used.
+
+HEADING OUTLINE
+PASS — exactly one h1 and no skipped levels.
+
+h1  Why Semantic HTML Matters
+  h2  What semantic HTML means
+    h3  Meaning over appearance
+  h2  Building a clear page structure
+    h3  Headings create an outline
+  h2  Using images accessibly
+  h2  Semantic elements at a glance
+  h2  Accessibility audit checklist
+    h3  Publication details
+  h2  Quick takeaway
+
+IMAGES
+PASS — 5 images.
+PASS — informative images have meaningful alt text.
+PASS — decorative image has alt="".
+
+TABLE
+PASS — caption, thead, tbody, th scope="col", th scope="row".
+
+SCRIPTS
+PASS — plain inline script.
+PASS — async external script.
+PASS — defer external script.
+All three use console.log with ISO timestamps.
+
+SCRIPT EXECUTION ORDER
+The plain script runs immediately when the parser reaches it. The async script runs as soon as its download completes and can therefore race with parsing. The defer script waits for HTML parsing to finish. The async script's position relative to defer is not guaranteed; the browser's actual console timestamps must be copied during the live test.
+
+KEYBOARD
+PASS by code inspection — the skip link is the first focusable element and :focus-visible provides a visible focus indicator. The navigation links are normal anchors and therefore keyboard reachable.
+
+LIGHTHOUSE / AXE / HEADING EXTENSION / SCREEN READER
+A real Lighthouse run, axe DevTools run, browser-extension result, and NVDA/VoiceOver listening session require a GUI/browser + assistive-technology session that is not available in this environment. I have not fabricated scores or a screen-reader result. Run those four tests locally and paste their real outputs into the final submission.
+
+150-WORD ANSWER
+Semantic HTML matters for three reasons. First, it improves accessibility. Elements such as main, nav, article, section, and headings communicate structure and purpose to screen readers and assistive technologies, helping users understand and navigate a page. Second, semantic HTML improves maintainability. When elements describe their purpose, developers can understand the document quickly, make changes safely, and avoid confusing collections of generic containers and class names. Third, semantic HTML improves interoperability and discoverability. Browsers, search engines, accessibility tools, and other software can interpret meaningful elements more reliably than presentation-only markup. Semantic structure also separates content from appearance, so a document can adapt to different devices, browsers, and user preferences without losing its meaning. In short, semantic HTML makes websites easier to use, easier to maintain, and easier for software to understand. It is not about using more HTML elements; it is about choosing the right element for each piece of content.
+
+SCREEN-READER REFLECTION
+A genuine NVDA/VoiceOver listening session cannot be performed in this environment, so this is not presented as a fabricated test result. The revised page was designed to make the areas that commonly cause confusion clearer: the navigation landmark has an explicit label, headings follow one logical hierarchy, informative images have concise alternative text, the decorative image uses an empty alt attribute, and the data table has a caption and scoped headers. The skip link appears first in the keyboard focus order, while the focus indicator is visually distinct. During the real NVDA/VoiceOver pass, verify landmark navigation, heading navigation, image announcements, table headers, and skip-link behavior. Record any confusing announcement and update this paragraph with the observed issue and corresponding fix. This transparency is preferable to inventing a score or claiming an assistive-technology session that did not actually occur.
